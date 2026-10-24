@@ -1,15 +1,18 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+const compiler = resolve("node_modules/elm/bin/elm");
+const args = [
+  "make",
+  "src/Main.elm",
+  "--optimize",
+  "--output=src/elm.generated.js",
+];
+// No Windows o pacote mantém um wrapper Node; no Unix ele instala o binário aqui.
+const windows = process.platform === "win32";
 execFileSync(
-  process.execPath,
-  [
-    resolve("node_modules/elm/bin/elm"),
-    "make",
-    "src/Main.elm",
-    "--optimize",
-    "--output=src/elm.generated.js",
-  ],
+  windows ? process.execPath : compiler,
+  windows ? [compiler, ...args] : args,
   { stdio: "inherit" },
 );
 const source = readFileSync("src/elm.generated.js", "utf8");
