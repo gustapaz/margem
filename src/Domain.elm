@@ -47,7 +47,7 @@ current state =
 
 wordCount : String -> Int
 wordCount body =
-    body |> String.words |> List.filter (String.toList >> List.any (\c -> Char.isAlpha c || Char.isDigit c)) |> List.length
+    body |> String.words |> List.filter (String.toList >> List.any (\c -> Char.toLower c /= Char.toUpper c || Char.isDigit c)) |> List.length
 
 
 readingMinutes : String -> Int

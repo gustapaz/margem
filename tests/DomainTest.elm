@@ -12,7 +12,7 @@ suite =
     describe "Caderno local"
         [ test "contagem ignora espaços e pontuação isolada, preserva números e palavras acentuadas" <|
             \_ ->
-                Expect.equal [ 0, 0, 4, 3 ] (List.map Domain.wordCount [ "", "… — !", "Uma xícara, 2 histórias.", "uma\n\tduas   três" ])
+                Expect.equal [ 0, 0, 4, 3, 3 ] (List.map Domain.wordCount [ "", "… — !", "Uma xícara, 2 histórias.", "uma\n\tduas   três", "É à í." ])
         , test "leitura é zero sem palavras e arredonda a 200 por minuto" <|
             \_ ->
                 Expect.equal [ 0, 1, 2 ] (List.map Domain.readingMinutes [ "", String.repeat 200 "a ", String.repeat 201 "a " ])
