@@ -1,0 +1,6 @@
+node_modules/
+elm-stuff/
+dist/
+public/elm.js
+*.log
+src/elm.generated.js

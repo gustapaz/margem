@@ -1,0 +1,23 @@
+{
+  "name": "margem",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "elm": "node scripts/compile.mjs",
+    "dev": "npm run elm && vite --host 127.0.0.1 --port 5186",
+    "build": "npm run elm && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5186",
+    "test": "elm-test",
+    "format": "elm-format src tests --yes"
+  },
+  "devDependencies": {
+    "@fontsource-variable/lora": "^5.2.0",
+    "@fontsource/ibm-plex-mono": "^5.2.0",
+    "elm": "0.19.1-6",
+    "elm-format": "0.8.8",
+    "elm-test": "0.19.1-revision17",
+    "prettier": "3.9.10",
+    "vite": "8.3.5"
+  }
+}

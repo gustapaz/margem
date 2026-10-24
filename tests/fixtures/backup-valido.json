@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "drafts": [
+    {
+      "id": 42,
+      "title": "Caderno de teste",
+      "body": "Este texto veio de um backup local. Nenhuma nuvem foi usada.",
+      "notebook": "ideias",
+      "finished": false,
+      "goal": 100,
+      "prompt": "",
+      "updated": 1
+    }
+  ],
+  "active": 42,
+  "nextId": 43,
+  "serial": 1,
+  "fontSize": 22,
+  "night": false
+}
